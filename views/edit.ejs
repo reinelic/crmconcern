@@ -1,0 +1,118 @@
+
+<% include ./partials/header %>
+<h1> Vous pouver modifier la plainte de <%= plainte.plaignant_name%> ici:</h1>
+
+<div class="card">
+    <div class="card-header">
+        Editer la plainte
+    </div>
+    <div class="card-body">
+        <form class="m-5" action="/plaint/<%= plainte._id%>?_method=PUT" method="POST">
+            
+    <div class="row plaignant">
+        
+                  <div class="col">
+                    <label for="plaignant"> Nom du Plaignant</label>
+                    <input class="form-control" type="text" id="plaignant" name="plainte[plaignant_name]" value="<%=plainte.plaignant_name%>" >
+                  </div>  
+                  
+                  <div class="col">
+                         <label for="source">Catégorie du Plaignant</label>
+                         <select class="form-control" id= "source" name="plainte[source]">
+                             <option value="Staff"> Staff</option>
+                             <option value="Staff-Partenaire"> Staff des partenaires</option>
+                             <option value="Beneficiary">Bénéficiaire</option>
+                             <option value="Donor">Donateur</option>
+                             <option value="Public">Public</option>
+                             <option value="Anonymous">Anonyme</option>
+                             <option value="Autre">Autre</option>
+                          </select>     
+                        
+                  </div>
+                  
+                  <div class="col">
+                         <label for="location">Location du Plaignant</label>
+                         <select class="form-control" id= "sujet"value ="<%plainte.location%>" name="plainte[]">
+                             <option value="Bujumbura">Bujumbura</option>
+                             <option value="Cibitoke"> Cibitoke</option>
+                             <option value="Kirundo"> Kirundo</option>
+                             <option value="concern-information">Qualité des informations fournis</option>
+                             
+                          </select>     
+                        
+                   </div>
+                   
+                   
+    
+    </div>    
+    
+    <div class="row plainte">
+        
+       <div class="col">
+                         <label for="sujet_plainte"> Sujet de la plainte</label>
+                         <select class="form-control" id= "sujet"value ="<%plainte.sujet%>" name="plainte[sujet]">
+                             <option value="staff_behavior"> Comportement d'un staff</option>
+                             <option value="concern_work"> Qualité de notre travail</option>
+                             <option value="concern-procedures"> Qualité de nos procédures</option>
+                             <option value="concern-information">Qualité des informations fournis</option>
+                             <option value="partner-work">Le travail de nos partenaires</option>
+                             <option value="Fraude">Fraude</option>
+                             <option value="benefits-staff"> Les avantages du Staff</option>
+                          </select>     
+                        
+        </div>  
+        
+        
+        
+        <div class="col">
+                       
+                        <label for="datedesoummission">Date de soumission de la plainte</label>
+                        <input class="form-control" type="date" id="datesoumission" name="plainte[date_soumission]" value="<%=plainte.date_soumission%>" >
+                   
+        </div>
+        
+        <div class="col">
+            
+         <label for="description"> Description de la plainte</label>
+         <textarea class="form-control"  id="description" name="plainte[description]"> <%=plainte.description%></textarea>
+         
+        </div>
+        
+         <div class="col">
+             
+             
+              <label for="status"> Status de la plainte</label>
+              
+              <input class="form-control" type="text" id="status" name="plainte[status]" value="<%=plainte.status%>"  placeholder="status" readonly>
+        </div>
+    
+    
+    </div>
+    
+    <div class="row">
+       
+    <div class="col">
+    <label for="datereunion"> Date de Reunion CRM</label>
+    <input class="form-control" type="date" id="datereunion" name="plainte[date_reunion]" value="<%=plainte.date_reunion%>" >
+    </div>
+                      
+    <div class="col"> 
+     <label for="assigned"> Plainte pour traitement assigné à :</label>
+    <select class="form-control" id= "assigned" name="plainte[assigned]">
+    <option value="<%= plainte.assigned %>"> <%= plainte.assigned %></option>
+    </select>
+    </div> 
+        
+        
+        
+    </div>
+    
+    
+    <button class="btn btn-primary btn-block"> Submit</button>
+    
+</form>
+    </div>
+</div>
+
+    
+<% include ./partials/footer %>

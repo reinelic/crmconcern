@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+
+<div class="card">
+  <div class="card-header"> <h2>  Consulter votre investigation</h1></div>
+  <div class="body p-3">
+    <div class ="display-5"> Le rapport de l'investigation est ainsi : <em> <%=investigation.rapport%></em>  </div>
+<h5> Le status est : <em> <%= investigation.status%></em></h5>
+</br>
+
+
+
+<a href="/plaint/<%= plainteid%>/investigation/<%= investigation._id%>/edit" class="btn btn-info"> Editer investigation</a>
+
+  </div>
+</div>
+
+
+
+<% include ../partials/footer %>

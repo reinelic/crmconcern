@@ -1,0 +1,46 @@
+<% include ./partials/header %>
+
+        
+        <h3> En bas, la liste des plaintes en cours</h3>
+
+<% if(currentUser.username == "reinelic"){%>
+<div>
+<a href="/plaint/new" class="btn btn-info"> Deposer plainte <i class="far fa-plus-square"></i></a>
+</div>
+</br>
+<% } %>
+
+
+<table class="table table-striped ">
+ <thead>
+  <tr>
+   <th scope="col"> Nom du plaignant</th>
+    <th scope="col"> Description plainte</th>
+     <th scope="col"> categorie de la plainte</th>
+      <th scope="col"> Analyser</th>
+      <th scope="col"> Supprimer</th>
+      
+   
+  </tr>
+ </thead>
+ <tbody>
+    
+<% plaints.forEach(function(plaint){ %>
+
+<% if ( currentUser.username=="reinelic" || currentUser.username == plaint.assigned) {%>
+ <tr>
+  <td><%= plaint.plaignant_name%></td>
+  <td><%= plaint.description%></td> 
+  <td><%= plaint.categorie%></td>
+  <td><a href="/plaint/<%= plaint._id%>" class="btn btn-success"> Consulter la plainte</a> </td>
+  <td> <form action="/plaint/<%= plaint._id%>?_method=DELETE" method="POST">
+   <button class="btn btn-danger"> Delete <i class="far fa-trash-alt"></i></button>
+</form></td>
+  </tr>
+<% } %>
+<% }); %>
+
+</tbody>
+</table>
+</div>
+<% include ./partials/footer %>

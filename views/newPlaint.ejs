@@ -1,0 +1,155 @@
+ <% include ./partials/header %>   
+<h1>This is the new plaint form</h1>
+
+<div class="card">
+    <div class="card-header">
+       Enregistrer une plainte
+    </div>
+    <div class="card-body">
+
+<form  action = "/plaint" method="POST">
+    
+     <div class="row plaignant">
+        
+         <div class="col-2 text-muted"> Information sur le plaignant</div>
+        
+                  <div class="col">
+                    <label for="plaignant"> Nom du Plaignant</label>
+                    <input class="form-control" type="text" id="plaignant" name="plainte[plaignant_name]" placeholder="Nom du Plaignant" value="" >
+                  </div>  
+                  
+                  <div class="col">
+                         <label for="source">Catégorie du Plaignant</label>
+                         <select class="form-control" id= "source" name="plainte[source]">
+                             <option value="Staff"> Staff</option>
+                             <option value="Staff-Partenaire"> Staff des partenaires</option>
+                             <option value="Beneficiary">Bénéficiaire</option>
+                             <option value="Donor">Donateur</option>
+                             <option value="Public">Public</option>
+                             <option value="Anonymous">Anonyme</option>
+                             <option value="Autre">Autre</option>
+                          </select>     
+                        
+                  </div>
+                  
+                  <div class="col">
+                         <label for="location">Location du Plaignant</label>
+                         <select class="form-control" id= "sujet"value ="" name="plainte[location]">
+                             <option value="Bujumbura">Bujumbura</option>
+                             <option value="Cibitoke"> Cibitoke</option>
+                             <option value="Kirundo"> Kirundo</option>
+                             <option value="concern-information">Bubanza</option>
+                             
+                          </select>     
+                        
+                   </div>
+                   
+                   
+    
+    </div>    
+    
+    <div class="row plainte">
+        
+         <div class="col-2 text-muted">
+          Plainte     
+             
+         </div>
+         
+         
+       <div class="col">
+                         <label for="sujet_plainte"> Sujet de la plainte</label>
+                         <select class="form-control" id= "sujet"value ="" name="plainte[sujet]">
+                             <option value="staff_behavior"> Comportement d'un staff</option>
+                             <option value="concern_work"> Qualité de notre travail</option>
+                             <option value="concern-procedures"> Qualité de nos procédures</option>
+                             <option value="concern-information">Qualité des informations fournis</option>
+                             <option value="partner-work">Le travail de nos partenaires</option>
+                             <option value="Fraude">Fraude</option>
+                             <option value="benefits-staff"> Les avantages du Staff</option>
+                          </select>     
+                        
+        </div>  
+        
+        
+        
+        <div class="col">
+                       
+                        <label for="datedesoummission">Date de soumission de la plainte</label>
+                        <input class="form-control" type="date" id="datesoumission" name="plainte[date_soumission]" value="" >
+                   
+        </div>
+        
+       
+        
+       
+        
+         
+    
+    
+    </div>
+    
+     <div class="row">
+            
+            <div class="col offset-2 h-100px">
+                
+               
+            
+         <label for="description"> Description de la plainte</label>
+         <textarea class="form-control"  id="description" name="plainte[description]"> </textarea>
+         
+        
+                
+            </div>
+            
+            
+        </div>
+    
+    <div class="row">
+        
+        <div class="col-2 text-muted">Décision comité </div>
+        
+        <div class="col">
+          <label for="datereunion"> Date de Reunion CRM</label>
+        <input class="form-control" type="date" id="datereunion" name="plainte[date_reunion]" >
+        </div>        
+        
+         <div class="col"> 
+         
+                 <label for="assigned"> Plainte pour traitement assigné à :</label>
+                <select class="form-control" id= "assigned" name="plainte[assigned]">
+                <% allUsers.forEach(function(user){%>
+                <option value="<%= user.username %>"> <%= user.username %> </option>
+                <% }); %>
+                </select>
+        </div>
+        
+        
+    </div>
+    
+    <div class = "row">
+        
+        <div class="col-3  offset-2">
+             
+              <label for="status"> Status de la plainte</label>
+              
+              <input class="form-control" type="text" id="status" name="plainte[status]" value=""  placeholder="status">
+        </div>
+        
+    </div>
+    
+   
+            
+               <button  type=" submit" class=" btn btn-primary btn-block"> Submit</button>
+        
+          
+    
+</form>
+
+
+     </div>   
+    </div>
+   <a href="/plaint"> Retour</a> 
+
+<% include ./partials/footer %>
+    
+
