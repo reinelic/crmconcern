@@ -78,7 +78,10 @@ var plainteRoute = require("./routes/plaints"),
 //DATABASE CONNECTION
 //++++++++++++++++++
 
-mongoose.connect("mongodb://localhost/crm5");
+//mongoose.connect("mongodb://localhost/crm5");
+
+mongoose.connect("mongodb://<admin>:<C0ncern!>@ds125073.mlab.com:25073/crm");
+
 app.use(methodOverride("_method"));
 
 
