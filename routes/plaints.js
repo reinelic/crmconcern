@@ -6,6 +6,8 @@ var Plainte = require("../models/plainte");
 var Investigation = require("../models/investigation");
 var User = require("../models/user");
 const mail = require("../handlers/mail");
+
+
 // PLAINT  ROUTES
 
 
@@ -48,7 +50,7 @@ router.get("/plaint/new",isLoggedIn,function(req,res){
 })
 
 // Deleted Plaint Route
-router.delete("/plaint/:id",isLoggedIn,function(req,res){
+router.delete("/plaint/:id",isLoggedIn,isAssigned,function(req,res){
     Plainte.findByIdAndDelete(req.params.id,function(err,detetedPlaint){
         if(err)
         {
@@ -97,19 +99,21 @@ router.get("/plaint/:id/edit",isLoggedIn,function(req,res){
 
 // Edit the plaint
 
-router.put("/plaint/:id",isLoggedIn,function(req,res){
+router.put("/plaint/:id",isLoggedIn,isAssigned,function(req,res){
+    
     Plainte.findByIdAndUpdate(req.params.id,req.body.plainte,function(err,updatedPlainte){
-        if(err)
-        {
-            console.log(err);
-        }
-        else
-        {
-           
-            console.log(updatedPlainte);
-            res.redirect("/plaint/" + req.params.id);
-        }
-    })
+                        if(err)
+                        {
+                            console.log(err);
+                        }
+                        else
+                        {
+                           
+                            console.log(updatedPlainte);
+                            res.redirect("/plaint/" + req.params.id);
+                        }
+    }) 
+   
  
    });
 
@@ -165,6 +169,36 @@ router.post("/plaint",isLoggedIn,function(req,res){
 
 
 // MIDDLEWARE
+
+function isAssigned(req,res,next){
+    
+    Plainte.findById(req.params.id,function(err, foundPlainte){
+    if(err)
+    {
+        console.log(err)
+    }
+    else
+    {
+        if(req.user.isAdmin||foundPlainte.assigned ===req.user.username)
+        {
+           
+            next();
+        }
+        
+        else
+        {
+            
+            console.log("you do not have permissions to edit this plaint")
+            res.redirect("back");
+        }
+    }
+    
+    })
+}
+
+
+
+
 
 function isLoggedIn(req,res,next){
     if(req.isAuthenticated()){
