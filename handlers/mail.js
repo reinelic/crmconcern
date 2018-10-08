@@ -1,6 +1,6 @@
 var nodemailer = require("nodemailer");
 var juice = require("juice");
-var htmltoText = require("html-to-text");
+//var htmltoText = require("html-to-text");
 const promisify = require("es6-promisify");
 
 nodemailer.createTestAccount((err, account) => {
