@@ -80,6 +80,9 @@ var plainteRoute = require("./routes/plaints"),
 //DATABASE CONNECTION
 //++++++++++++++++++
 
+// When you need a backup when the environment variables get messed up!
+//var url = process.env.DATABASEURL || "mongodb://alice:C0ncern!@ds125073.mlab.com:25073/crm";
+
 mongoose.connect(process.env.DATABASEURL);
 
 //mongoose.connect("mongodb://alice:C0ncern!@ds125073.mlab.com:25073/crm");
