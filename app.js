@@ -80,9 +80,11 @@ var plainteRoute = require("./routes/plaints"),
 //DATABASE CONNECTION
 //++++++++++++++++++
 
-//mongoose.connect("mongodb://localhost/crm5");
+mongoose.connect(process.env.DATABASEURL);
 
-mongoose.connect("mongodb://alice:C0ncern!@ds125073.mlab.com:25073/crm");
+//mongoose.connect("mongodb://alice:C0ncern!@ds125073.mlab.com:25073/crm");
+
+
 
 app.use(methodOverride("_method"));
 
