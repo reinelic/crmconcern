@@ -3,13 +3,12 @@
         
         <h3> En bas, la liste des plaintes en cours</h3>
 
-<% if(currentUser.username == "reinelic"){%>
+<% if(currentUser.isAdmin == true){%>
 <div>
 <a href="/plaint/new" class="btn btn-info"> Deposer plainte <i class="far fa-plus-square"></i></a>
 </div>
 </br>
 <% } %>
-
 
 <table class="table table-striped ">
  <thead>
@@ -20,14 +19,17 @@
       <th scope="col"> Analyser</th>
       <th scope="col"> Supprimer</th>
       
+
+    
+<% plaints.forEach(function(plaint){ %>
+
+<% if ( currentUser.isAdmin == true || currentUser.username == plaint.assigned) {%>
+
    
   </tr>
  </thead>
  <tbody>
-    
-<% plaints.forEach(function(plaint){ %>
 
-<% if ( currentUser.username=="reinelic" || currentUser.username == plaint.assigned) {%>
  <tr>
   <td><%= plaint.plaignant_name%></td>
   <td><%= plaint.description%></td> 
