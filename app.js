@@ -9,7 +9,8 @@ var express = require("express"),
     passport=require("passport"),
     LocalStrategy= require("passport-local"),
     User= require("./models/user"),
-    nodemailer = require("nodemailer")
+    nodemailer = require("nodemailer"),
+    juice=require("juice");
     
 
 
