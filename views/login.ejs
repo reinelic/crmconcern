@@ -1,28 +1,88 @@
 
 <% include ./partials/header %>
 
-
- 
-<h1 class="display-5 text-center"> Connexion au plateforme</h1>
-<div class="d-flex  justify-content-center ">
-    <div  class="m-5">
-            <form class="text-align-center" action="/login" method="POST">
-                  <div class="form-group">
-                      <!--<label for="username">Identifiant</label>-->
-                      <input  class="form-control-lg" id="username" type="text" name="username" placeholder="username">
-                  </div>  
-                    <div class="form-group">
-                        <!--<label for="password"> Mot de passe</label>-->
-                        <input  class="form-control-lg " id="password" type="password" name="password" placeholder="password">
-                    </div>
-        
-            <button class="btn btn-primary btn-block my-2"> Connexion</button>
+<!--second row for login part-->
+<div class="row login">
+   
+   
+    <!--full col-12 grid  for login card-->
+     
     
-    </form>
+    <div class="col  d-flex justify-content-center align-items-center">
+        
+        
+    
+           <!--start of login card-->
+          <div class="card p-4">
+              <!--start of card-body-->
+              <div class="card-body">
+                   <!--card-title section-->
+                  <div class="card-title  text-uppercase text-center mb-5 p-2 font-weight-bold border-bottom border-success">
+                      
+                      Connexion
+                  </div>
+                    <!--end of card-title-section-->
+                 <!--login form-->
+           <form action="/login"  method="POST">
+               
+                  <div class="form-group">
+                    <!--<label for="username">Identifiant</label>-->
+                    <input type="text" class="form-control-lg" id="username" type="text" name="username" placeholder="Identifiant">
+             
+                  </div>
+                  <div class="form-group">
+                    <!--<label for="exampleInputPassword1">Mot de passe</label>-->
+                    <input type="password" class="form-control-lg" id="password" type="password" name="password" placeholder="Mot de passe">
+                  </div>
+                  
+                  <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+        </form>
+           
+           <!--end of login form -->
+                
+                  
+              </div>
+              <!--end of card body-->
+              
+          
+          </div> 
+           <!--end of login card-->
+           
+          
+                
+            <!--     <form action="/login"  class="my-5 bg-white" method="POST">-->
+            <!--      <div class="form-group ">-->
+                      <!--<label for="username">Identifiant</label>-->
+            <!--          <input  class="form-control-lg" id="username" type="text" name="username" placeholder="username">-->
+            <!--      </div>  -->
+            <!--        <div class="form-group">-->
+                        <!--<label for="password"> Mot de passe</label>-->
+            <!--            <input  class="form-control-lg" id="password" type="password" name="password" placeholder="password">-->
+            <!--        </div>-->
+        
+            <!--            <button class="btn btn-primary my-2 d-block"> Connexion</button>-->
+    
+            <!--</form>-->
+                
+
+            
+           </div> 
+            
+        
+        
+         
+        
+        
     </div>
-
+    <!--end of full col grid for login card-->
+    
 </div>
+ <!--end of row for login-->
+ 
+  
 </div>
+<!--end of container-->
+
+</body>
 
 
-<% include ./partials/footer %>

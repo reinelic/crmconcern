@@ -22,7 +22,8 @@ var express = require("express"),
 var plainteRoute = require("./routes/plaints"),
     investigationRoute= require("./routes/investigations"),
     
-    indexRoute=require("./routes/index");
+    indexRoute=require("./routes/index"),
+    excelRoute=require("./routes/convertxls");
 
 //++++++++++++++++++
 // APP CONFIGURATION
@@ -83,7 +84,7 @@ var plainteRoute = require("./routes/plaints"),
 // When you need a backup when the environment variables get messed up!
 //var url = process.env.DATABASEURL || "mongodb://alice:C0ncern!@ds125073.mlab.com:25073/crm";
 
-mongoose.connect(process.env.DATABASEURL);
+mongoose.connect("mongodb://localhost/crm5");
 
 //mongoose.connect("mongodb://alice:C0ncern!@ds125073.mlab.com:25073/crm");
 
@@ -98,6 +99,7 @@ app.use(methodOverride("_method"));
 app.use(plainteRoute);
 app.use(investigationRoute);
 app.use(indexRoute);
+app.use(excelRoute);
 
 
 // import  invironmental variables rom our variables env file

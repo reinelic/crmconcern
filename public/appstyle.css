@@ -1,8 +1,29 @@
+
+/* color: #007B75*/
+
+
+:root{
+    
+    
+    --mainGreen:#00734a;
+    --mainOrange:;
+    --mainLightGreen:;
+    --mainpurple:rgba(119, 119, 199, 0.7);
+    
+    
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: RGBA(7,57,60);
-    height:800px;
-    color:white;
+    background-color:rgba(7,57,60);
+  
+    color:#777;
+  
     
 }
 
@@ -13,11 +34,103 @@ body{
       rgba(7,57,60, 1)
     ),url('img/52.jpg');
     background-size:cover;
-    height:550px;
+    height:75vh;
     background-position: top left;
     background-repeat: no-repeat; 
     color:gray;
+  
+    
 
+}
+
+.crm{
+    margin-top:20px;
+    background:linear-gradient(rgba(7,57,60, 1),rgba(119, 119, 199, 0.7));
+
+}
+
+hr {
+   
+    border-color:#D64933;
+    display:inline-block;
+    width:300px;
+    animation:hranimation 2s ease-in;
+    animation-fill-mode:forwards;
+    
+    
+   
+  
+}
+
+.divider{
+    
+   margin-top:50px;
+    
+}
+
+i .plainte{
+    border:1px rgba(119, 119, 199, 0.7) solid ;
+    padding:10px;
+    border-radius:50px;
+    color:white;
+     animation:iconanimation 2s ease-in both;  
+    
+}
+
+
+@keyframes iconanimation{
+    
+    0%{
+        
+        transform: translateX(-250px);
+        opacity:0;
+        
+    }
+    
+    100%{
+        
+        transform : translateX(13px);
+        opacity:1;
+        
+    }
+    
+    
+    
+}
+
+
+
+
+@keyframes hranimation{
+    
+    0%{
+        opacity:0;
+        transform:translateX(-300px);
+        
+    }
+    
+    100%{
+        
+        transform:translateX(30px);
+        opacity:1;
+    }
+    
+}
+
+.crmimage{
+   background:linear-gradient(
+      rgba(7,57,60, 1), 
+      rgba(7,57,60, 0.8)
+    ),url('img/crm.jpg');
+    height:480px;
+    width:100%;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+row .list{
+    
+    height:100%;
 }
 
 #calendar{
@@ -36,10 +149,7 @@ body{
 }
 
 
-.container{
-    height: 300px;
-    margin-top:20px;
-}
+
 
 .cal{
     background:linear-gradient(
@@ -57,8 +167,9 @@ body{
       rgba(0, 115, 74, 0.9)
     ),url('img/crm.jpg');
     
-    background-position: top left;
+    background-position:center left;
     background-size:cover;
+    height:900px;
    
 }
 
@@ -67,10 +178,12 @@ body{
     
 }
 .navbar-light .navbar-brand{
-    color:green!important;
+    color:#43AA8B!important;
 }
 
-
+.navbar-light .navbar-nav .nav-link{
+    color:#43AA8B!important;
+}
 
 .jumbotron {
    background-color: transparent;
@@ -80,17 +193,15 @@ body{
    padding-bottom: 200px !important;
 }
 
-.navbar-light .navbar-nav .nav-link{
-    color:#5FAD41!important;
-}
+
 
 .btn-primary{
     background-color:rgb(0,115,74)!important;
     border-color:rgb(0,115,74)!important;
 }
 .btn-success{
-    background-color: #61D095!important;
-    border-color:#61D095!important;
+    background-color: #3E2F5B!important;
+    border-color:#3E2F5B!important;
 
 }
 .btn-info{
@@ -99,19 +210,19 @@ body{
 }
 h1{ 
     
-    color:#16262E!important;
+    color:white;
 }
 
 
 
 
-.box .sidebar{
-    height: 400px;
-}
+/*.box .sidebar{*/
+/*    height: 400px;*/
+/*}*/
 
-.container-fluid{
-    padding-bottom:100px !important ;
-}
+/*.container-fluid{*/
+/*    padding-bottom:100px !important ;*/
+/*}*/
 
 .display-4{
     color:#D64933 !important;
@@ -135,19 +246,64 @@ h1{
      
      
      color:#222;
- }
- 
- 
- form .row {
-     margin-bottom:10px;
- }
- 
- /*form .row {*/
- /*    height:100px;*/
- /*}*/
- 
- 
- form .row col-2{
      
-     color:#61D095!important;
+    
+ }
+ 
+ .card-header{
+     background-color:#3E2F5B;
+     color:white;
+  
+ }
+ 
+ .card-body{
+     background-color:white;
+     color:#222;
+ }
+
+ 
+input{
+    
+    border-bottom-color: #3E2F5B;
+    border-top:none;
+
+}
+ 
+ 
+ 
+ .footer{
+     width:100%;
+     background:url('img/back.png');
+     background-size:100% 100%;
+     background-position: top;
+     background-repeat: no-repeat;
+     height:30px;
+     text-align:center;
+     
+   
+ }
+ 
+ 
+ .row .login{
+     height: 80vh;
+ }
+ 
+ .showitem{
+     
+     padding-bottom: 10px;
+ }
+ 
+
+ 
+ .showitem{
+     
+ 
+     width:300px;
+     padding-bottom: 20px
+ }
+ 
+ label{
+     
+     font-size: 10px;
+     color:rgba(119, 119, 199, 0.7);
  }

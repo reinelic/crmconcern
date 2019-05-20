@@ -1,18 +1,25 @@
 <% include ../partials/header %>
 
 <div class="card">
-  <div class="card-header"> <h2>  Consulter votre investigation</h1></div>
-  <div class="body p-3">
-    <div class ="display-5"> Le rapport de l'investigation est ainsi : <em> <%=investigation.rapport%></em>  </div>
-<h5> Le status est : <em> <%= investigation.status%></em></h5>
-</br>
+  <div class="card-header border-bottom"> <h2>  Consulter votre investigation</h1></div>
+  <div class="d-flex card-body p-6 flex-wrap">
+    
+    <div class="show br-7 w-100 border-left border-success pl-5">
+      
+            <div><span class="showitem font-weight-bold d-inline-block">Le rapport de l'investigation est ainsi : </span><div class="p-5"><%=investigation.rapport%></div></div>
+            <div><span class="showitem font-weight-bold d-inline-block">Le status de l'investigation  est :  : </span><%= investigation.status%></div>
+          <div class ="display-5">  <em> </em>  </div>
+          <div><em> </em></div>
+         <a href="/plaint/<%= plainteid%>/investigation/<%= investigation._id%>/edit" class="btn btn-info"> Editer investigation</a>
+    </div>  
+    
+    
 
 
-
-<a href="/plaint/<%= plainteid%>/investigation/<%= investigation._id%>/edit" class="btn btn-info"> Editer investigation</a>
-
+<!--end of flex container-->
   </div>
 </div>
+<!--end of card-->
 
 
 

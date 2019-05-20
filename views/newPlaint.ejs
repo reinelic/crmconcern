@@ -1,9 +1,9 @@
  <% include ./partials/header %>   
-<h1>This is the new plaint form</h1>
+<h1>Enregistrer une Plainte</h1>
 
 <div class="card">
-    <div class="card-header">
-       Enregistrer une plainte
+    <div class="card-header font-weight-bold">
+       Nouvelle Plainte
     </div>
     <div class="card-body">
 
@@ -23,10 +23,10 @@
                          <select class="form-control" id= "source" name="plainte[source]">
                              <option value="Staff"> Staff</option>
                              <option value="Staff-Partenaire"> Staff des partenaires</option>
-                             <option value="Beneficiary">Bénéficiaire</option>
-                             <option value="Donor">Donateur</option>
+                             <option value="Bénéficiaire">Bénéficiaire</option>
+                             <option value="Donateur">Donateur</option>
                              <option value="Public">Public</option>
-                             <option value="Anonymous">Anonyme</option>
+                             <option value="Anonyme">Anonyme</option>
                              <option value="Autre">Autre</option>
                           </select>     
                         
@@ -38,7 +38,7 @@
                              <option value="Bujumbura">Bujumbura</option>
                              <option value="Cibitoke"> Cibitoke</option>
                              <option value="Kirundo"> Kirundo</option>
-                             <option value="concern-information">Bubanza</option>
+                             <option value="Bubanza">Bubanza</option>
                              
                           </select>     
                         
@@ -59,13 +59,13 @@
        <div class="col">
                          <label for="sujet_plainte"> Sujet de la plainte</label>
                          <select class="form-control" id= "sujet"value ="" name="plainte[sujet]">
-                             <option value="staff_behavior"> Comportement d'un staff</option>
-                             <option value="concern_work"> Qualité de notre travail</option>
-                             <option value="concern-procedures"> Qualité de nos procédures</option>
-                             <option value="concern-information">Qualité des informations fournis</option>
-                             <option value="partner-work">Le travail de nos partenaires</option>
+                            <option value="Comportement d'un staff"> Comportement d'un staff</option>
+                             <option value="Qualité de notre travail"> Qualité de notre travail</option>
+                             <option value="Qualité de nos procédures"> Qualité de nos procédures</option>
+                             <option value="Qualité des informations fournis">Qualité des informations fournis</option>
+                             <option value="Le travail de nos partenaires">Le travail de nos partenaires</option>
                              <option value="Fraude">Fraude</option>
-                             <option value="benefits-staff"> Les avantages du Staff</option>
+                             <option value="Les avantages du Staff"> Les avantages du Staff</option>
                           </select>     
                         
         </div>  
@@ -126,20 +126,26 @@
         
     </div>
     
-    <div class = "row">
+    <div class = "row mb-4">
         
         <div class="col-3  offset-2">
              
               <label for="status"> Status de la plainte</label>
+              <select class="form-control" id="status" name="plainte[status]" value="">
+                  <option class="valable">Valable</option>
+                  <option class="valable"> Non Valable</option>
+              </select>
               
-              <input class="form-control" type="text" id="status" name="plainte[status]" value=""  placeholder="status">
+             
         </div>
         
     </div>
     
-   
+     <div>
+          <button  type=" submit" class=" btn btn-primary btn-block"> Déposer Plainte</button>
+     </div>
             
-               <button  type=" submit" class=" btn btn-primary btn-block"> Submit</button>
+              
         
           
     

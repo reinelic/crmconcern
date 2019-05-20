@@ -12,21 +12,31 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>CRM app</title>
   </head>
-  <body class="d-flex">
-    <div class="col-md-2 sidebar"></div>
+  <body>
+    
+    <!-- Begin full container of login-->
+    
+    <div class="container-fluid">
+      
+      <!--first row and unique row-->
+      
+    <div class="row list">
+      
+      <!--sidebar column-->
+    <div class="col-md-1 sidebar"></div>
    
-  
-
-
-  
-     
-       
+      <!--end of sidebar column-->
+      
+      <!--login and navbar col-->
         
-     <div class="col-md-9 ml-5">
-       
-       
-      <nav  class="navbar navbar-expand-lg navbar-light bg-light ml-auto">
-          <a class="navbar-brand" href="/"><img  class="logo" src="/img/logo.png"> Plateforme CRM</a>
+     <div class="col-md-11 ">
+       <!--row for nav-->
+       <div class="row">
+         <!--single full column-->
+         <div class="col">
+         
+         <nav  class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+          <a class="navbar-brand" href="/">Plateforme CRM</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -53,36 +63,85 @@
             </ul>
           </div>
         </nav> 
-        
+          
+          
+          <!--end of navrow-->
          <% if(error && error.length > 0) {%>
-        <div class="alert alert-danger alert-dismissible fade show " role="alert"> <%= error%><%= some%><button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button> </div>
+         
+         
+         <div class="alert alert-warning alert-dismissible fade show" role="alert"> <%= error%><%= some%> 
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+         
+         
+                     
+              <!--      <div class="alert alert-danger alert-dismissible fade show " role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
+              <!--  <span aria-hidden="true">&times;</span>-->
+              <!--</button> </div>-->
         
         <% }%>
         
         <% if(success && success.length >0) {%>
-        <div class="alert alert-success alert-dismissible fade show" role="alert"> <%= success%><%= some%><button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button> </div>   
+        
+         <div class="alert alert-success alert-dismissible fade show" role="alert"><%= success%><%= some%> 
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        
+        
+  <!--      <div class="alert alert-success alert-dismissible fade show" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
+  <!--  <span aria-hidden="true">&times;</span>-->
+  <!--</button> </div>   -->
+  
+  
+  
+  
         <% }  %>
         
         
          <% if(info && info.length > 0) {%>
-        <div class="alert alert-info alert-dismissible fade show" role="alert"> <%= info%><%= some%><button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button> </div>
+         
+         
+          <div class="alert alert-info alert-dismissible fade show" role="alert"><%= info%><%= some%> 
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+         
+         
+         
+  <!--      <div class="alert alert-info alert-dismissible fade show" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
+  <!--  <span aria-hidden="true">&times;</span>-->
+  <!--</button> </div>-->
         
         <% } %>
         
       
         
         <% if(some && some.length > 0) {%>
-        <div class=" alert alert-secondary alert-dismissible fade show" role="alert"> <%= some%><button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button> </div>
+        
+         
+          <div class="alert alert-secondary alert-dismissible fade show" role="alert"><%= some%> 
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+         
+        
+        
+  <!--      <div class=" alert alert-secondary alert-dismissible fade show" role="alert"> <%= some%><button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
+  <!--  <span aria-hidden="true">&times;</span>-->
+  <!--</button> </div>-->
         
         <% } %>
+         </div>
+         </div>
+     
+       
       
    
    

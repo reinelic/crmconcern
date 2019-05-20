@@ -26,7 +26,25 @@ router.get("/plaint",isLoggedIn,function(req,res){
         }
         else
         {
-            res.render('index',{plaints:allPlaints,currentUser:req.user});
+            //res.render('index',{plaints:allPlaints,currentUser:req.user});
+            
+            var perPage = 3;
+            var pageQuery = parseInt(req.query.page);
+            var pageNumber = pageQuery ? pageQuery : 1;
+            Plainte.find({}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allPlaints) {
+                Plainte.count().exec(function (err, count) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.render("index", {
+                    plaints: allPlaints,
+                    currentUser:req.user,
+                    current: pageNumber,
+                    pages: Math.ceil(count / perPage)
+                });
+            }
+        });
+    });
         }
         
     })
@@ -204,7 +222,7 @@ function isLoggedIn(req,res,next){
     if(req.isAuthenticated()){
         return next();
     }
-    req.flash("error","Pour accéder au plateforme vous devez  vous connecter");
+    req.flash("error","Pour accéder au plateforme vous devrez d'abord  vous connecter");
     res.redirect("/login");
 }
 
