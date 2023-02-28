@@ -1,11 +1,11 @@
 
 /* color: #007B75*/
 
-
+/* #00734a; */
 :root{
     
     
-    --mainGreen:#00734a;
+    --mainGreen:
     --mainOrange:;
     --mainLightGreen:;
     --mainpurple:rgba(119, 119, 199, 0.7);
@@ -20,9 +20,9 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    background-color:rgba(7,57,60);
+    background-color:rgb(23, 84, 84);
   
-    color:#777;
+    color:rgb(255, 255, 255);
   
     
 }
@@ -251,7 +251,7 @@ h1{
  }
  
  .card-header{
-     background-color:#3E2F5B;
+     background-color:#ffffff;
      color:white;
   
  }
