@@ -73,7 +73,10 @@ app.use(function (req, res, next) {
 // When you need a backup when the environment variables get messed up!
 //var url = process.env.DATABASEURL || "mongodb://alice:C0ncern!@ds125073.mlab.com:25073/crm";
 
-mongoose.connect(process.env.DB, { useNewUrlParser: true })
+mongoose.connect(process.env.DB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
 
 //mongoose.connect("mongodb://alice:C0ncern!@ds125073.mlab.com:25073/crm");
 
