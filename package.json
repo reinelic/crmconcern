@@ -10,6 +10,7 @@
   "author": "reinelic",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.3.4",
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
     "dotenv": "^6.2.0",
