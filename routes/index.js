@@ -108,10 +108,9 @@ const { google } = require('googleapis')
 // // ROUTES
 // //++++++++
 
-// router.get("/",function(req,res){
-
-//     res.render("home",{currentUser:req.user, events:schedules});
-// })
+router.get('/', function (req, res) {
+  res.render('home', { currentUser: req.user })
+})
 
 //+++++++++++++++
 // AUTH ROUTES
